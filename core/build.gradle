@@ -1,0 +1,16 @@
+apply plugin: "java"
+
+sourceCompatibility = 1.6
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+sourceSets.main.java.srcDirs = [ "src/" ]
+
+
+eclipse.project {
+    name = appName + "-core"
+}
+
+dependencies {
+    implementation 'org.eclipse.jetty:jetty-util:9.2.14.v20151106'
+    implementation files('gdx-sqlite.jar')
+}
